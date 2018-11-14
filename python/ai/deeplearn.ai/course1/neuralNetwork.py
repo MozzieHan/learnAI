@@ -102,14 +102,13 @@ class DeepNeuralNetwork:
 
 
 if __name__ == '__main__':
-    X = np.random.randn(64 * 64 * 3, 200)
+    X = np.random.rand(64 * 64 * 3, 200)
     Y = np.random.randint(0, 2, (1, 200))
 
     neural_network = DeepNeuralNetwork(X, Y, (64 * 64 * 3, 4, 5, 6, 1))
     neural_network.initialize_parameters()
-    AL = neural_network.L_model_forward()
+    AL, A_cache = neural_network.L_model_forward()
     cost = neural_network.compute_cost(AL)
-    # print(AL)
     print(cost)
 
 

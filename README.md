@@ -1,1 +1,1 @@
-# learnAI
+# learn
