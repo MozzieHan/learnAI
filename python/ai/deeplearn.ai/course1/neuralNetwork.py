@@ -1,5 +1,5 @@
 import numpy as np
-import nn_utils
+from . import nn_utils
 
 
 class DeepNeuralNetwork:
