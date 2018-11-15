@@ -1,20 +1,22 @@
 [[source]]
-url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+# url = "https://pypi.org/simple"
+# url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+# url = "https://mirrors.aliyun.com/pypi/simple/"
+url = "https://pypi.doubanio.com/simple/"
 verify_ssl = true
 name = "pypi"
 
-[dev-packages]
-
 [packages]
-numpy = "*"
 requests = "*"
-matplotlib = "*"
-pillow = "*"
-ipython = "*"
 scipy = "*"
-sklearn = "*"
+matplotlib = "*"
+numpy = "*"
 jupyter = "*"
+dataclasses = "*"
+sklearn = "*"
 "h5py" = "*"
+
+[dev-packages]
 
 [requires]
 python_version = "3.6"

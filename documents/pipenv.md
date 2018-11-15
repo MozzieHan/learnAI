@@ -15,7 +15,6 @@ click是Flask作者 Armin Ronacher 写的命令行库，现在Flask已经集成�
 pip install pipenv  
 ```
 
-
 ### 常用操作
 - pipenv --three/--two   # 用python3/2创建一个virtualenv
 - pipenv --python 3.6    # 指定某一python版本创建环境
@@ -36,4 +35,9 @@ pip install pipenv
 - pipenv update          # 先执行lock, 再执行sync
 
 
-pipfile清华源 "https://pypi.tuna.tsinghua.edu.cn/simple"
+pip 国内源
+- 阿里云         https://mirrors.aliyun.com/pypi/simple/
+- 中国科技大学    https://pypi.mirrors.ustc.edu.cn/simple/ 
+- 豆瓣(douban)   https://pypi.douban.com/simple/ 
+- 清华大学        https://pypi.tuna.tsinghua.edu.cn/simple/
+- 中国科学技术大学 https://pypi.mirrors.ustc.edu.cn/simple/
