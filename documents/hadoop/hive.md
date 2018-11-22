@@ -8,18 +8,33 @@
 
 #### hive 数据类型
 
-##### 基本数据类型
+- 整型
+    - tinyint   1 byte (-128 ~ 127)
+    - smallint  2 byte (-32,768 ~ 32,767)
+    - int       4 byte (-2,147,483,648 ~ 2,147,483,647)
+    - bigint    8 byte (-9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807)
+- 浮点型
+    - float     4 byte 单精度
+    - double    8 byte 双精度
+- 定点数
+    - decimal
+- 布尔型
+    - boolean
+- 字符型
+    - string
+    - varchar
+    - char
+- 时间型
+    - date
+    - timestamp
+    - interval
+- 二进制
+    - binary
 
-- tinyinit/smallint/int/biginit ： 整数
-- float/double ： 浮点数
-- boolean： 布尔
-- string/varchar/char： 字符串
-
-##### 复杂数据类型
-
-- array： 数组，由一系列相同数据类型的元素组成
-- map： 集合，包含key->value ,可以通过key来访问元素
-- struct ：结构，可以包含不同的数据类型，通过 ‘点语法’ 来访问所需要的元素
+- 复合数据类型
+    - arrays： 数组，由一系列相同数据类型的元素组成
+    - maps： 集合，包含key->value ,可以通过key来访问元素
+    - structs ：结构，可以包含不同的数据类型，通过 ‘点语法’ 来访问所需要的元素
 
 ##### 时间类型
 
@@ -86,7 +101,8 @@ CREATE EXTERNAL TABLE IF NOT EXISTS user (
 -- 装载数据
 LOAD DATA LOCAL INPATH '/user'
   OVERWRITE INTO TABLE user
-  PARTITION (gender="male", age=13);
+  PARTITION (gender="male", age=13); -- LOCAL 表示在本地文件系统中, 若没LOCAL 表示在HDFS系统中
+  -- OVERWRITE 表示删除现有数据
 ```
 
 
