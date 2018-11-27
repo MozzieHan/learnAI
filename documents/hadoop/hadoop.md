@@ -237,6 +237,7 @@
     ```shell
     export ZOOKEEPER_HOME=/usr/local/zookeeper
     export PATH=$PATH:$ZOOKEEPER_HOME/bin
+    export ZOO_LOG_DIR=$ZOOKEEPER_HOME/logs
     ```
 
 ### HDFS
@@ -330,5 +331,5 @@ blocksize: 128M(默认)
 - hive HQL ，提供基于hdfs类sql查询，离线批处理
 - hbase    数据库（基于hdfs）
 - zookeeper   分布式协调
-- flume    日志收集                日志文件-->hdfs
-- sqoop    数据库数据收集    关系数据库<-->hdfs
+- flume    日志收集                日志文件-->hdfs/hive/hbase/...
+- sqoop    数据库数据收集    关系数据库<-->hdfs/hive/hbase/...

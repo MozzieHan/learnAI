@@ -36,14 +36,19 @@
     - maps： 集合，包含key->value ,可以通过key来访问元素
     - structs ：结构，可以包含不同的数据类型，通过 ‘点语法’ 来访问所需要的元素
 
-##### 时间类型
+- 时间类型
 
-- date ： yyyy-mm-dd
-- timestamp：10位整数
+    - date ： yyyy-mm-dd
+    - timestamp：10位整数
+
 
 ### HiveQL 数据/操作
 #### hive 常用操作
 
+1. 启动 hive cli
+    - hive
+    - beeline -u jdbc:hive2://localhost:10000  (需先启动hiveserver2)
+    
 ```mysql
 CREATE DATABASE test 
   LOCATION '/user/hive/worehouse/test' -- 修改数据默认存放位置
