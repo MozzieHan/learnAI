@@ -159,10 +159,7 @@
          </property>
          <property>
             <name>javax.jdo.option.ConnectionURL</name>
-            <value>jdbc:mysql://localhost:3306/metastore?createDatabaseIfNotExist=true&amp;useSSL=false</value>
-         </property>
-         <property>
-            <name>javax.jdo.option.ConnectionDriverName</name>
+            <value>jdbc:mysql://localhost:3306/metastore?createDatabaseIfNotExist=true&amp;useSSL=false</value>      </property>      <property>         <name>javax.jdo.option.ConnectionDriverName</name>
             <value>com.mysql.jdbc.Driver</value>
          </property>
          <property>
@@ -299,7 +296,7 @@ blocksize: 128M(默认)
   - 单个节点的资源管理
 - ApplicationMaster： AM
   - 每个程序对应一个（一个mapreduce，一个spark），负责应用程序的管理
-  - 为应用程序想RM申请资源（core，memory）， 分配给内部task
+  - 为应用程序向RM申请资源（core，memory）， 分配给内部task
   - 需要与NM通信：启动/停止task，task是运行在container里面，AM也是运行在container里面
 - Container
   - 封装了CPU，memory等资源的一个容器
@@ -328,8 +325,10 @@ blocksize: 128M(默认)
 
 ### hadoop 生态
 
-- hive HQL ，提供基于hdfs类sql查询，离线批处理
-- hbase    数据库（基于hdfs）
-- zookeeper   分布式协调
-- flume    日志收集                日志文件-->hdfs/hive/hbase/...
-- sqoop    数据库数据收集    关系数据库<-->hdfs/hive/hbase/...
+- hive HQL  提供基于hdfs类sql查询，离线批处理
+- hbase     分布式数据库（基于hdfs） # 也可基于本地文件系统/亚马逊s3
+- zookeeper 分布式协调框架
+- flume     日志收集         日志文件-->hdfs/hive/hbase/...
+- sqoop     数据库数据收集    关系数据库<-->hdfs/hive/hbase/...
+- spark     可代替mapreduce,加快处理速度 / hive on spark / spark streaming做流处理
+- kafka     分布式消息队列

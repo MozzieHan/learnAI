@@ -97,3 +97,6 @@ sum = line.reduce(lambda x, y: x + y)
 
 ### hive, hive on spark 和 sparkSQL 区别
 [hive, hive on spark, sparkSQL](https://blog.csdn.net/MrLevo520/article/details/76696073)
+
+
+### spark streaming
