@@ -58,6 +58,3 @@ class SingleLink:
                 return True
         return False
 
-
-
-
