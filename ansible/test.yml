@@ -1,0 +1,22 @@
+---
+- hosts: ali1
+  tasks: 
+    - name: ping ali1 host
+      ping:
+    - name: create file
+      file: 
+        path: ~/testdir/test
+        state: directory
+- hosts: ali2
+  tasks:
+    - name: create file2
+      file:
+        path: ~/ali2file
+        state: touch
+
+- hosts: ali
+  tasks:
+    - name: ping ali
+      ping:
+
+

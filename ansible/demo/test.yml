@@ -1,0 +1,4 @@
+- hosts: ali1
+  roles:
+  - debugmsg
+      
