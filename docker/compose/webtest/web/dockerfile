@@ -1,0 +1,11 @@
+FROM python:3.6
+MAINTAINER amumu "moz_han@126.com"
+
+RUN DEBIAN_FRONTEND=noninteractive apt update -y && apt install -y git
+RUN mkdir -p /opt/webapp && mkdir -p /var/www/static/chainfrontier/ && \
+    mkdir -p /var/www/storage/chainfrontier/ && mkdir -p /var/log/chainfrontier/
+
+WORKDIR /opt/webapp/chainfrontier
+ADD ./start.sh /opt/webapp/
+EXPOSE 8000
+CMD ["bash", "/opt/webapp/start.sh"]

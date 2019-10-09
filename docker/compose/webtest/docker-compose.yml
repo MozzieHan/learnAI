@@ -1,0 +1,50 @@
+version: '3.4'
+services:
+  code:
+    build: ./code
+    volumes:
+      - "static:/var/www"
+      - "code:/opt/webapp/chainfrontier" 
+  web:
+    build: ./web
+    depends_on:
+      - code
+      - db
+    ports:
+      - "8000"
+    volumes:
+      - type: volume
+        source: code
+        target: /opt/webapp/chainfrontier
+      - type: volume
+        source: static
+        target: /var/www
+    command: bash /opt/webapp/start.sh
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_DATABASE: chainfrontier
+    ports:
+      - "3306"
+    volumes:
+      - "dbdata:/var/lib/mysql"
+      - "./db/utf8mb4.cnf:/etc/mysql/conf.d/utf8mb4.cnf"
+  nginx:
+    image: "nginx:latest"
+    depends_on:
+      - web1
+      - web2
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - type: volume
+        source: static
+        target: /var/www
+      - "./nginx/conf.d:/etc/nginx/conf.d"
+
+volumes:
+  code:
+  dbdata:
+  static:

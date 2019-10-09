@@ -1,0 +1,23 @@
+version: '3'
+services:
+  web1:
+    build: ./web
+    volumes: ["./web:/opt/webapp"]
+    depends_on: 
+      - nginx
+      - redis
+  web2:
+    build: ./web
+    volumes: ["./web:/opt/webapp"]
+    depends_on:
+      - nginx
+      - redis
+  redis:
+    image: "redis:3.2-alpine"
+  nginx:
+    image: "nginx:latest"
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - "./nginx/conf.d:/etc/nginx/conf.d"

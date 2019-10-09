@@ -1,0 +1,12 @@
+FROM ubuntu:14.04
+MAINTAINER amumu "moz_han1@126.com"
+
+RUN apt update -y && apt install -y git
+RUN mkdir -p /opt/webapp
+WORKDIR /opt/webapp
+
+RUN git clone https://hanwenhao777:everchain2018@github.com/everchain-admin/chainfrontier.git
+
+ADD config.json /opt/webapp/chainfrontier/chainfrontier/
+# VOLUME ["code:/opt/webapp/chainfrontier"]
+

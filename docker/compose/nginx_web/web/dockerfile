@@ -1,0 +1,12 @@
+FROM python:3.6-alpine
+MAINTAINER amumu "moz_han@126.com"
+
+RUN pip install --upgrade pip && pip install flask && pip install redis
+RUN mkdir -p /opt/webapp
+
+ADD ./app.py /opt/webapp/
+
+WORKDIR /opt/webapp
+EXPOSE 5000
+
+CMD ["python", "app.py"]

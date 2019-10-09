@@ -1,0 +1,24 @@
+{
+    "DEBUG": true,
+    "STATIC_ROOT": "/var/www/static/chainfrontier/",
+    "MEDIA_ROOT": "/var/www/storage/chainfrontier/",
+    "DATABASES": {
+	"default": {
+	    "ENGINE": "django.db.backends.mysql",
+	    "NAME": "chainfrontier",
+	    "USER": "root",
+	    "PASSWORD": "mysql",
+	    "HOST": "db",
+	    "PORT": "3306",
+	    "OPTIONS": {
+	        "sql_mode": "TRADITIONAL",
+	        "charset": "utf8mb4",
+	        "init_command": "SET default_storage_engine=INNODB, character_set_connection=utf8mb4, collation_connection=utf8mb4_unicode_ci"
+	    } 
+        }
+    },
+    "LOG_DIR": "/var/log/chainfrontier/",
+    "LOG_ENV": "production",
+    "SITENAME": "chainfrontier.amumu.com",
+    "SITENAME_DOMAIN": "http://chainfrontier.amumu.com"
+}
