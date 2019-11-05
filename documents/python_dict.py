@@ -99,5 +99,7 @@ if __name__ == '__main__':
     print(a["a"])
     print(a["b1"])
     print(a["c3"])
-    print(a["d"])
+    # print(a["d"])
+    a["d1"] = 23
+    print(a.slots)
 
